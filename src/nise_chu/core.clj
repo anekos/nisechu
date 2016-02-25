@@ -15,10 +15,14 @@
     (flush)
     (when-let [line (read-line)]
       (let [chinized (chinize line)]
-        ;(say creds chinized)
-        (pp/pprint chinized)
+        (when creds
+          (say creds chinized))
+        (println chinized)
         (recur)))))
 
 (defn -main [& args]
-  (let [config (conf/get-config)]
-    (shell config)))
+  (let [[sub] args]
+    (shell
+      (if (= sub "test")
+        nil
+        (conf/get-config)))))

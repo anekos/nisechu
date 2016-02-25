@@ -2,7 +2,8 @@
   (:use nise-chu.han)
   (:require [clojure.pprint :as pp]
             [nise-chu.config :as conf]
-            [twitter.api.restful :as api]))
+            [twitter.api.restful :as api])
+  (:gen-class))
 
 
 (defn say [creds text]

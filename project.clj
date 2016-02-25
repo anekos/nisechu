@@ -6,4 +6,7 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [clj-oauth "1.5.4"]
                  [twitter-api "0.7.8"]]
-  :main nise-chu.core)
+  :main nise-chu.core
+  :bin {:name "nise-chu"
+        :bootclasspath true}
+  :aot [nise-chu.core])

@@ -5,7 +5,8 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [clj-oauth "1.5.4"]
-                 [twitter-api "0.7.8"]]
+                 [twitter-api "0.7.8"]
+                 [org.slf4j/slf4j-simple "1.7.16"]]
   :main nise-chu.core
   :bin {:name "nise-chu"
         :bootclasspath true}

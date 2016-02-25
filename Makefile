@@ -1,7 +1,7 @@
 
 .PHONY: clean
 
-target/nise-chu:
+build:
 	lein bin
 	~/script/dev/clojure/fix-lein-bin-classpath ./target/nise-chu
 

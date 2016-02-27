@@ -1,7 +1,9 @@
 (ns nise-chu.core
   (:use nise-chu.han)
-  (:require [clojure.pprint :as pp]
+  (:require [ring.adapter.jetty :refer [run-jetty]]
+            [clojure.pprint :as pp]
             [nise-chu.config :as conf]
+            [nise-chu.web.core :refer [app]]
             [twitter.api.restful :as api])
   (:gen-class))
 
@@ -22,7 +24,7 @@
 
 (defn -main [& args]
   (let [[sub] args]
-    (shell
-      (if (= sub "test")
-        nil
-        (conf/get-config)))))
+    (cond
+      (= sub "test") (shell nil)
+      (= sub "twitter") (shell (conf/get-config))
+      (= sub "web") (run-jetty app {:port 3000}))))

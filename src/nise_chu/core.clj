@@ -1,6 +1,6 @@
 (ns nise-chu.core
-  (:use nise-chu.han)
-  (:require [ring.adapter.jetty :refer [run-jetty]]
+  (:require [nise-chu.han :refer [chinize]]
+            [ring.adapter.jetty :refer [run-jetty]]
             [clojure.pprint :as pp]
             [nise-chu.config :as conf]
             [nise-chu.web.core :refer [app]]
